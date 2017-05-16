@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="description" content="The Haxe programming language is well known for its wide range of compilation targets. It is possible to compile a single Haxe code base to JavaScript, Java, C#, Python, C++, PHP, Lua, and more.
+ Let&#39;...">
+    <meta name="author" content="Hong Kong Open Source Conference 2017">
+    <meta property="og:site_name" content="Hong Kong Open Source Conference 2017">
+    <meta property="og:title" content="Hong Kong Open Source Conference 2017">
+    <meta property="og:url" content="/2017/topics/build-a-cross-platform-game-in-haxe">
+    <meta property="og:image" content="http://file.hkoscon.org/og/2017.png">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="The Haxe programming language is well known for its wide range of compilation targets. It is possible to compile a single Haxe code base to JavaScript, Java, C#, Python, C++, PHP, Lua, and more.
+ Let&#39;s have some hands-on experience with the Haxe by building a simple game that is totally cross-platfo...">
+    <meta name="theme-color" content="#294454">
+    <title>Hong Kong Open Source Conference 2017 // 香港開源年會 2017</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/2017/app.css" rel="stylesheet" >
+    <link href="/2017/images/favicon.ico" rel="icon">
+    <link href="/2017/manifest.json" rel="manifest">
+    <link rel="icon" sizes="48x48" href="https://hkoscon.org/logo.png">
+    <link rel="icon" sizes="96x96" href="https://hkoscon.org/logo.png">
+    <link rel="icon" sizes="144x144" href="https://hkoscon.org/logo.png">
+    <link rel="icon" sizes="192x192" href="https://hkoscon.org/logo.png">
+    
+</head>
+<body class="page--topics--topic page--topics--build-a-cross-platform-game-in-haxe">
+<div class="navbar-fixed">
+    <nav>
+        <ul class="left">
+            <li>
+                <a href="#" data-activates="sidebar" class="button-collapse show-on-large">
+                    <i class="material-icons">menu</i>
+                </a>
+            </li>
+        </ul>
+        <div class="nav-wrapper container">
+            <a href="/2017/" class="brand-logo">HKOSCon 2017</a>
+            <ul class="right">
+                <li></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<ul id="sidebar" class="side-nav">
+    <li class="logo">
+        <a href="/2017/">
+            <img src="/2017/images/favicon.png" alt="HKOSCon">
+        </a>
+    </li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+          <li>
+              <a href="#" class="bold waves-effect collapsible-header">About</a>
+              <ul class="collapsible-body">
+                  <li><a href="/2017/about/">Organizers</a></li>
+                  <li><a href="/2017/about/coc.html">Code Of Conduct</a></li>
+                  <li><a href="/2017/about/staff.html">Staff</a></li>
+                  <li><a href="/2017/about/patron-programme.html">Patron Programme</a></li>
+              </ul>
+          </li>
+      </ul>
+    </li>
+    <li class="bold"><a class="waves-effect waves-teal" href="/2017/schedule">Schedule</a></li>
+    <li class="bold"><a class="waves-effect waves-teal" href="/2017/cfp/">Call For Proposals Results</a></li>
+    <li class="bold"><a class="waves-effect waves-teal" href="/2017/sponsor/">Sponsor</a></li>
+    <li class="bold"><a class="waves-effect waves-teal" href="/2017/venue/">Venue</a></li>
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a href="#" class="bold waves-effect collapsible-header">Archive</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="https://2016.opensource.hk/" target="_blank">HKOSCon 2016</a></li>
+                        <li><a href="https://2015.opensource.hk/" target="_blank">HKOSCon 2015</a></li>
+                        <li><a href="https://2014.opensource.hk/" target="_blank">HKOSCon 2014</a></li>
+                        <li><a href="https://2013.opensource.hk/" target="_blank">HKOSCon 2013</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<div id="signin-modal" class="modal">
+    <div class="modal-content">
+        <h4>Sign In</h4>
+        <div>
+            <button class="waves-effect waves-light btn-large" provider="facebook">
+                <i class="fa fa-facebook left"></i>
+                Facebook
+            </button>
+
+            <button class="waves-effect waves-light btn-large" provider="twitter">
+                <i class="fa fa-twitter left"></i>
+                Twitter
+            </button>
+
+            <button class="waves-effect waves-light btn-large" provider="google">
+                <i class="fa fa-google left"></i>
+                Google
+            </button>
+
+            <button class="waves-effect waves-light btn-large" provider="github">
+                <i class="fa fa-github left"></i>
+                Github
+            </button>
+        </div>
+    </div>
+</div>
+
+<main>
+
+<div class="theme-area"><div class="content">
+  <div class="container">
+    <div class="title">
+      <div class="title-type">Workshop</div>
+      <h1>Build a cross-platform game in Haxe</h1>
+      <div class="title-speakers">
+        <p><a href="#speaker-andy-li" class="name">Andy Li</a>, <a href="#speaker-kevin-leung" class="name">Kevin Leung</a></p>
+      </div>
+    </div>
+  </div>
+</div></div><!--/.content--><!--/.theme-area-->
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col m12 topic-details">
+
+      <div class="description">
+        
+        <p>The Haxe programming language is well known for its wide range of compilation targets. It is possible to compile a single Haxe code base to JavaScript, Java, C#, Python, C++, PHP, Lua, and more.
+</p>
+        
+        <p>Let's have some hands-on experience with the Haxe by building a simple game that is totally cross-platform - runs on desktops, mobiles, and browsers. We will explore Haxe’s modern language design and study how it produce performance efficient outputs.
+</p>
+        
+      </div><!--/.description-->
+
+      
+      <div class="location">
+        <i class="fa fa-map-signs" aria-hidden="true"></i>
+        Training Room 1
+      </div>
+      
+
+      <div class="language">
+        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        English (English Slides)
+      </div>
+
+      
+      <div class="level">
+        
+          <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          For Coders and Tech Audiences with General Knowledge and Skills.
+        
+      </div>
+      
+
+      
+      <div class="requirement">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        Participants should have programming experience with at least one programming language. Proficiency with JavaScript, Java, or C# is ideal, but experience with other languages such as C/C++, Python, or Ruby is also sufficient. Participants should have some familiarity using the command line.
+Participants should bring their own laptop computer, with either Windows, Mac, or Linux installed.
+
+      </div>
+      
+
+    </div>
+
+  </div>
+  <div class="row">
+
+    <div class="speakers">
+      <h2>Speakers</h2>
+      
+        
+        <div id="speaker-andy-li" class="speaker row">
+
+  <div class="col l2 m3 s12">
+    <div class="portrait">
+        
+          <img src="https://file.hkoscon.org/speakers/2017/andy.li.png" alt="Photo of Andy Li" title="Andy Li" />
+        
+    </div>
+  </div>
+
+  <div class="col l10 m9 s12">
+
+    <h3>
+      <span class="name">Andy Li</span>
+        <span class="nickname">Andy</span>
+    </h3>
+
+    <div class="datasheet">
+
+        
+          <div class="quick-info thumbnail">
+              
+                <div class="social">
+                    
+                      <a title="Github of Andy Li" href="https://www.github.com/andyli" target="_blank">
+                        <i class="fa fa-github fa-icon" aria-hidden="true"></i>
+                      </a>
+                    
+                    
+                    
+                      <a title="Blog of Andy Li" href="https://blog.onthewings.net/" target="_blank">
+                        <i class="fa fa-globe fa-icon" aria-hidden="true"></i>
+                      </a>
+                    
+                    
+                    
+                </div>
+              
+          </div>
+        
+
+      <div class="description">
+          
+            <p>Andy Li is a member of the Haxe Foundation. He obtained his PhD in the School of Creative Media, City University of Hong Kong. He is interested in programming language theories as well as mobile user interface, interactivity, installation art and generative graphics.
+</p>
+          
+            <p>He works in TCL Research (HK) as a senior researcher, in which he works with the Virtual Reality team that develops new motion tracking systems, VR development tools, and custom VR contents.
+</p>
+          
+      </div><!--/.description-->
+
+      <div class="nationality">
+          
+            Nationality: Hong Kong
+              
+          
+      </div><!--/.nationality-->
+
+      <div class="affiliations">
+
+          
+
+          
+
+          
+
+      </div><!--/.affiliations-->
+
+    </div>
+
+  </div>
+
+</div><!--/.speaker-->
+
+      
+        
+        <div id="speaker-kevin-leung" class="speaker row">
+
+  <div class="col l2 m3 s12">
+    <div class="portrait">
+        
+          <img src="https://file.hkoscon.org/speakers/2017/kevin.leung.jpg" alt="Photo of Kevin Leung" title="Kevin Leung" />
+        
+    </div>
+  </div>
+
+  <div class="col l10 m9 s12">
+
+    <h3>
+      <span class="name">Kevin Leung</span>
+        
+    </h3>
+
+    <div class="datasheet">
+
+        
+          <div class="quick-info thumbnail">
+              
+          </div>
+        
+
+      <div class="description">
+          
+            <p>Kevin Leung has been working in the actuarial field when he finds out his real interest to be programming. From GW Basic on a 80286 to Haxe on a Mac, Kevin is enthusiastic in learning new technology and always wishes to create something interesting in the beauty of code. He is now a full-stack developer in a startup company.
+</p>
+          
+      </div><!--/.description-->
+
+      <div class="nationality">
+          
+            Nationality: Hong Kong
+              
+          
+      </div><!--/.nationality-->
+
+      <div class="affiliations">
+
+          
+
+          
+
+          
+
+      </div><!--/.affiliations-->
+
+    </div>
+
+  </div>
+
+</div><!--/.speaker-->
+
+      
+    </div>
+
+    
+
+  </div>
+
+</div><!--/.topic-page-->
+</main>
+<footer class="page-footer">
+    <div class="contacts">
+      <ul>
+          <li>
+            <a href="https://facebook.com/hkoscon/" target="_blank" title="facebook.com/hkoscon"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/hkoscon/" target="_blank" title="twitter.com/hkoscon"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="mailto:conference@opensource.hk" title="conference at opensource.hk"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+          </li>
+      </ul>
+    </div>
+    <div class="copyright">
+        <a class="cc-logo" href="http://creativecommons.org/licenses/by-sa/3.0/hk/" target="_blank">
+            <img src="https://licensebuttons.net/l/by-sa/3.0/hk/88x31.png" height="31" width="88"
+                  alt="Creative Commons Attribution-ShareAlike 3.0 Hong Kong">
+        </a>
+        <div class="cc-info">
+          This work is licensed under a
+          <a href="http://creativecommons.org/licenses/by-sa/3.0/hk/" target="_blank">
+              Creative Commons Attribution-ShareAlike 3.0 Hong Kong License
+          </a>.
+        </div>
+        <div class="extras">
+          Logos and trademarks belong to their respective owners.
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.4.2/parallax.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js" defer></script>
+<script src="/2017/js/app.js" defer></script>
+<script src="https://hkoscon.org/ga.js" defer async></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>
